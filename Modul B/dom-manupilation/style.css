@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(116, 116, 116);
+    height: 100vh;
+    width: 100vw;
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: aqua;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    -webkit-text-stroke: 2px black;
+    color: red;
+    box-shadow: 5px 5px 5px black;
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+}
+.square:hover:not(.spin){
+    transform: scale(1.5);
+}
+
+ @keyframes spin{
+    from {transform: rotate(0deg) scale(1.5);}
+    to {transform: rotate(360deg) scale(1.5);}
+} 
+
+.spin {
+    animation: spin 1.5s infinite;
+}
+
+.squareContainer{
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 5px;
+}
+#input{
+    height: 20px;
+    
+    border: 1.5px dotted;
+}

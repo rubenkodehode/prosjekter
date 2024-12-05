@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="scripts.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+      click for date
+    </button>
+
+    <p id="demo"></p>
+
+    <p id="demot">you can change the color and style too</p>
+
+    <script>
+      function MyFunction() {
+        document.getElementById("demot").style.fontSize = "25px";
+        document.getElementById("demot").style.color = "red";
+        document.getElementById("demot").style.backgroundColor = "Yellow";
+      }
+    </script>
+
+    <button type="button" onclick="MyFunction()">Click me!</button>
+
+    <p id="date"></p>
+  </body>
+</html>

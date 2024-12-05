@@ -1,0 +1,267 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #728c69;
+  color: white;
+  /* padding: 20px; */
+  text-align: center;
+  display: flex;
+  margin: 0px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  align-items: flex-start;
+  font-family: 'DS-Digital', sans-serif;
+  color: #39ff14;
+  height: fit-content;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #354a21;
+  margin-top: 0px;
+  height: 100px;
+}
+
+.navigation a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+#logo{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.about {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.menu,
+.contact {
+  padding: 20px;
+  text-align: center;
+}
+
+.about {
+  background-color: #a9b99f;
+}
+
+.content-row {
+  display: flex; /* Sidebar and menu in a row */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 20px; /* Space between sidebar and menu */
+}
+
+.contact {
+  margin-top: 20px; /* Space above the contact section */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.snav {
+  position: relative;
+  width: 150px;
+}
+.sidenav {
+  flex: 0 0 200px; /* Fix width for the sidebar */
+  background-color: #f4f4f4; /* Optional: Background color */
+  padding: 15px; /* Optional: Padding */
+  border: 1px solid #ccc; /* Optional: Border */
+  border-radius: 8px; /* Optional: Rounded corners */
+  overflow-y: auto; /* Handle overflow if the sidebar content is long */
+  position: sticky; /* Make the sidebar sticky (optional) */
+  top: 20px; /* Align sticky sidebar */
+}
+.sidebar-options {
+  margin-top: 20px; /* Add spacing above the checkboxes */
+  padding: 8px; /* Optional, for a cleaner look */
+}
+
+.sidebar-options label {
+  display: block; /* Stack checkboxes vertically */
+  font-size: 18px; /* Slightly smaller font than links */
+  color: #000; /* Text color */
+  margin-bottom: 8px; /* Spacing between checkboxes */
+}
+
+.sidebar-options input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and label text */
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+#filters {
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Arrange items vertically */
+  gap: 10px; /* Add space between elements */
+  padding: 15px; /* Add padding inside the container */
+  background-color: #f4f4f4; /* Light gray background */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Rounded corners */
+  max-width: 200px; /* Restrict width to align better */
+}
+
+#filters label {
+  display: flex; /* Align checkbox and label text */
+  align-items: center; /* Vertically align text and checkbox */
+  gap: 8px; /* Add space between checkbox and text */
+  font-size: 16px; /* Adjust font size */
+}
+
+#filters button {
+  display: block; /* Make buttons stack */
+  width: 100%; /* Buttons take full width */
+  padding: 10px; /* Add padding for better clickability */
+  font-size: 14px; /* Adjust font size */
+  border: 1px solid #000; /* Add a border for buttons */
+  border-radius: 4px; /* Add rounded corners */
+  background-color: #fff; /* White background for buttons */
+  cursor: pointer; /* Pointer cursor for buttons */
+}
+
+#filters button:hover {
+  background-color: #eaeaea; /* Light hover effect */
+}
+
+.menu-heading{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 2px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-item {
+  width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-item .info {
+  padding: 10px;
+}
+
+.menu-item .price {
+  font-size: 14px;
+  color: #f1c40f;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+.menu {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.price {
+  font-weight: bold;
+  color: #6b4e31;
+}
+
+#contact {
+  margin-top: 40px; /* Add spacing between menu and contact section */
+  padding: 20px; /* Add padding inside the section */
+  background-color: #f4f4f4; /* Light background color */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
+#contact h2 {
+  text-align: center; /* Center the "Contact Us" heading */
+  margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+#contact p {
+  margin-bottom: 10px; /* Space between contact details */
+  font-size: 16px; /* Adjust font size for readability */
+}
+
+#contact form {
+  display: flex; /* Use flexbox for form layout */
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 15px; /* Add space between form elements */
+}
+
+#contact form input,
+#contact form textarea {
+  padding: 10px; /* Add padding inside input fields */
+  border: 1px solid #ccc; /* Add a light border */
+  border-radius: 4px; /* Rounded corners for input fields */
+  font-size: 14px; /* Font size for inputs */
+  width: 100%; /* Ensure inputs are full width */
+  box-sizing: border-box; /* Prevent padding from breaking width */
+}
+
+#contact form textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  height: 100px; /* Default height for the textarea */
+}
+
+#contact form button {
+  align-self: flex-start; /* Align the button to the left */
+  padding: 10px 20px; /* Add padding to the button */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for the button */
+}
+
+#contact form button:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+footer {
+  background-color: #728c69;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

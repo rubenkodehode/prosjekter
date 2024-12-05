@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 1.4rem;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+  font-family: "Inter var", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+.navbar--sticky{
+  background-color: #f3f3f3;
+}
+
+.navbar{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  font-size: 14px;
+  color: #696969;
+}
+
+.navbar ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar_link{
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  width: auto;
+  max-height: 40px;
+  margin: 5px 5px 5px 0;
+}
+
+.navbar-nav{
+  display: flex;
+}
+
+.navbar-nav li{
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.navbar-nav li a{
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 15px;
+  padding-bottom: 14px;
+  display: flex;
+}
+
+.heroimage_overlay-container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-image{
+  z-index: 0;
+  position: relative;
+}
+
+.heroimage_text{
+  padding: 5px 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.org-footer{
+  color: #383838;
+  background-color: #f5f5f5;
+  margin-top: auto;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 2px solid transparent;
+  border-top-color: transparent;
+}
+
+.org-footer_content{
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: left;
+  min-width: 150px;
+}
+
+.org-footer_content-header{
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.org-footer_content-text{
+  font-size: 14px;
+}
+
+.footer-site{
+  background-color: #f5f5f5;
+  color: #383838;
+  margin-top: auto;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 23px;
+  user-select: none;
+  font-size: 14px;
+}
+
+.container--fluid{
+  width: 100%;
+}

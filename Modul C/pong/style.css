@@ -1,0 +1,123 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  background-color: black; /* Black background for classic Pong aesthetic */
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Game Board */
+#board {
+  position: relative;
+  width: 800px; /* Scale board width with viewport width */
+  height: 400px; /* Scale board height with viewport height */
+  background-color: black; /* Matches the game's aesthetic */
+  border: 2px solid white;
+  overflow: hidden; /* Ensures elements don't spill outside */
+}
+
+/* Paddles */
+#player1,
+#player2 {
+  position: absolute;
+  width: 1.5%; /* Scale paddle width with board width */
+  height: 20%; /* Scale paddle height with board height */
+  background-color: white; /* White paddles for visibility */
+}
+
+/* Player 1 (Left Paddle) */
+#player1 {
+  left: 0;
+  top: 50%; /* Center paddle initially */
+  transform: translateY(-50%);
+}
+
+/* Player 2 (Right Paddle) */
+#player2 {
+  right: 0;
+  top: 50%; /* Center paddle initially */
+  transform: translateY(-50%);
+}
+
+/* Ball */
+#ball {
+  position: absolute;
+  width: 2%; /* Scale ball size with board width */
+  height: 2%; /* Scale ball size with board height */
+  background-color: white; /* White ball for visibility */
+  border-radius: 50%; /* Make the ball circular */
+  top: 50%; /* Center the ball */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Center Line */
+#centerLine {
+  position: absolute;
+  width: 0.5%; /* Thin vertical divider */
+  height: 100%; /* Full height of the board */
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Score Display */
+#score {
+  position: absolute;
+  top: 10px; /* Position above the board */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3vh; /* Responsive font size */
+  color: white; /* Contrast with black background */
+  text-align: center;
+}
+
+/* Winner Message */
+#winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vh; /* Responsive font size */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 10; /* Ensures it appears above everything else */
+}
+
+/* Hidden Winner Message */
+.hidden {
+  display: none;
+}
+
+/* Restart Button */
+#restart {
+  position: absolute;
+  top: 65%; /* Below the winner message */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vh; /* Responsive font size */
+  padding: 1vh 2vw;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Restart Button Hover Effect */
+#restart:hover {
+  background-color: #ddd;
+}

@@ -1,0 +1,8 @@
+#myDiv{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    left: 10px;
+    top: 10px
+}

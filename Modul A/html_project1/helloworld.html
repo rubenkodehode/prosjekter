@@ -1,0 +1,174 @@
+<style>
+  #divstyle {
+    width: 40%;
+    display: inline-block;
+  }
+  #link {
+    width: 30%;
+    display: inline-block;
+    align-self: center;
+  }
+  #img {
+    display: block;
+    margin: auto;
+    padding: auto;
+  }
+  #navbar {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+  }
+  td {
+    text-align: center;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My webside</title>
+  </head>
+  <nav id="navbar">
+    <ul>
+      <li><a href="#header">header</a></li>
+      <li><a href="#list">lists</a></li>
+      <li><a href="#format">formats</a></li>
+    </ul>
+  </nav>
+  <div id="header" id="divstyle">
+    <h1>Header styles</h1>
+    <ul>
+      <li><h1>h1: hello world</h1></li>
+      <li><h2>h2: hello world</h2></li>
+      <li><h3>h3: hello world</h3></li>
+      <li><h4>h4: hello world</h4></li>
+      <li><h5>h5: hello world</h5></li>
+      <li><h6>h6: hello world</h6></li>
+    </ul>
+  </div>
+  <hr />
+  <body style="background-color: blanchedalmond">
+    <div id="list" id="divstyle">
+      <h2>unorganized list</h2>
+      <ul>
+        <li>Katt</li>
+        <li>Hund</li>
+        <li>Kanin</li>
+        <li>Hamster</li>
+      </ul>
+      <ul>
+        <li>Pizza</li>
+        <li>Taco</li>
+        <li>Salat</li>
+      </ul>
+    </div>
+    <div id="divstyle">
+      <h2>organized list</h2>
+      <ol>
+        <li>Katt</li>
+        <li>Hund</li>
+        <li>Kanin</li>
+        <li>Hamster</li>
+      </ol>
+      <ol>
+        <li>Pizza</li>
+        <li>Taco</li>
+        <li>Salat</li>
+      </ol>
+    </div>
+    <br />
+
+    <hr />
+    <div id="format" id="divstyle">
+      <h2>text formatting</h2>
+      <ul>
+        <li><p>Simple paragraph: Hello world</p></li>
+        <ul>
+          <p>highlighted text</p>
+          <li>
+            <p><b>Bold: Hello world</b></p>
+          </li>
+          <li>
+            <p><strong>Strong: Hello world</strong></p>
+          </li>
+        </ul>
+        <li><ins>Underlined: Hello world</ins></li>
+      </ul>
+    </div>
+    <div id="divstyle">
+      <ul>
+        <li>
+          <p><em>Emphasized: Hello world</em></p>
+        </li>
+        <ul>
+          <p>smaller text</p>
+          <li>
+            <p><small>Small: Hello world</small></p>
+          </li>
+          <li>
+            <p><sub>Subscript: Hello world</sub></p>
+          </li>
+        </ul>
+
+        <li>
+          <del><p>deleted: Hello world</p></del>
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+    <table style="width: 100%" border="1">
+      <tr>
+        <td>Celle 1 - rad 1</td>
+        <td style="width: 70%">Celle 2 - rad 1</td>
+        <td>Celle 3 - rad 1</td>
+      </tr>
+      <tr>
+        <td>Celle 1 - rad 2</td>
+        <td>Celle 2 - rad 2</td>
+        <td>Celle 3 -rad 2</td>
+      </tr>
+    </table>
+    <div id="link">
+      <div>
+        <a href="mailto:ruben1.kodehode@gmail.com">mail</a>
+      </div>
+      <div>
+        <a href="https://www.vg.no"><h2>nyheter</h2></a>
+      </div>
+      <div>
+        <a href="https://www.nrk.no"> <button>bedre nyheter?</button> </a>
+      </div>
+    </div>
+
+    <img
+      id="img"
+      src="../pictures/Sabaton_Black_Logo.png"
+      alt="Sabaton_Black_Logo"
+      width="313"
+      height="117"
+    />
+  </body>
+</html>

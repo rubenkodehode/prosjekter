@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+  </head>
+  <body>
+    <div class="main">
+      <h2>Contact Us here</h2>
+      <form action="" method="get">
+        <div>
+          <label for="first_name">First name:</label><br>
+          <input type="text" id="first_name" name="first_name" required />
+        </div><br>
+        <div>
+          <label for="last_name">Last name:</label><br>
+          <input type="text" name="last_name" id="last_name" required />
+        </div><br>
+        <div>
+            <label for="mail">E-mail</label><br>
+            <input type="email" name="mail" id="mail" required>
+        </div><br>
+        <div>
+            <label for="phone">Phone number:</label><br>
+            <input type="tel" name="phone" id="phone"  pattern="[0-9]{8}" required>
+        </div><br>
+        <div>
+            <label for="text">Feedback:</label><br>
+            <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        </div><br>
+        <div>
+            <input type="button" value="Submit">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
