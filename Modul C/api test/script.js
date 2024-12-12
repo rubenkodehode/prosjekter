@@ -19,14 +19,16 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       if (data && data.length > 0) {
-        const { lat, lon, display_name } = data[0];
-        return { lat, lon, display_name };
+        let latitude = parseFloat(data[0].lat).toFixed(4);
+        let longitude = parseFloat(data[0].lon).toFixed(4);
+        const display_name = data[0].display_name;
+        return { lat: latitude, lon: longitude, display_name };
       } else {
         throw new Error("Location not found");
       }
     })
     .then(({ lat, lon, display_name }) => {
-      const auroraApiUrl = `https://api.auroras.live/v1/?type=location&lat=${lat}&long=${lon}`;
+      const auroraApiUrl = `https://api.auroras.live/v1/?type=ace&data=probability&lat=${lat}&long=${lon}`;
 
       console.log(auroraApiUrl);
       return fetch(auroraApiUrl)
@@ -34,7 +36,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         .then((auroraData) => {
           const resultDiv = document.getElementById("result");
           resultDiv.innerHTML = `<p><strong>Location:</strong> ${display_name}</p>
-                                <p><strong>Coordinates:</strong> ${lat}, ${lon}</p>
                                 <h4>Aurora Data:</h4>
                                 <pre>${JSON.stringify(
                                   auroraData,
