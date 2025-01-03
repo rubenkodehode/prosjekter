@@ -39,16 +39,16 @@ calendar.addEventListener("click", async (event) => {
       );
       const data = await response.json();
 
-      const content = data.joke || "God jul!";
+      const content = data.joke || "Merry Christmas!";
 
-      popup.textContent = `Luke ${day}: ${content}`;
+      popup.textContent = `Door ${day}: ${content}`;
       popup.style.display = "block";
     } catch (error) {
-      popup.textContent = "Kunne ikke hente data. Prøv igjen senere!";
+      popup.textContent = "Could not fetch data. Try again later!";
       popup.style.display = "block";
     }
   } else if (target && openedDays.has(target.dataset.day)) {
-    popup.textContent = `Luke ${target.dataset.day} er allerede åpnet!`;
+    popup.textContent = `Door ${target.dataset.day} has already been opened!`;
     popup.style.display = "block";
   }
 });
@@ -65,14 +65,14 @@ resetButton.addEventListener("click", () => {
 });
 
 addMessageButton.addEventListener("click", () => {
-  const day = prompt("Hvilken dato vil du legge til en melding for? (1-24)");
+  const day = prompt("Which day do you want to add a message on? (1-24)");
   if (day >= 1 && day <= 24) {
-    const message = prompt("Skriv inn din julemelding:");
+    const message = prompt("Write down your Christmas message:");
     if (message) {
       customMessages[day] = message;
-      alert(`Melding for dag ${day} er lagt til.`);
+      alert(`Message for day ${day} is added.`);
     }
   } else {
-    alert("Ugyldig dato. Vennligst velg en dato mellom 1 og 24.");
+    alert("Invalid day. Please choose a day between 1 and 24.");
   }
 });
