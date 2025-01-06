@@ -22,18 +22,18 @@ html {
 }
 
 .pimg1 {
-  background-image: url(/img/mtn1.jpg);
+  background-image: url(./img/mtn1.jpg);
   min-height: 100%;
 }
 
 .pimg2 {
-  background-image: url(/img/mtn2.jpg);
-  min-height: 400px;
+  background-image: url(./img/mtn2.jpg);
+  min-height: 100%;
 }
 
 .pimg3 {
-  background-image: url(/img/mtn3.jpg);
-  min-height: 400px;
+  background-image: url(./img/mtn3.jpg);
+  min-height: 100%;
 }
 
 .section {
@@ -58,6 +58,7 @@ html {
   text-align: center;
   color: black;
   font-size: 27px;
+  font-family: inherit;
   letter-spacing: 8px;
   text-transform: uppercase;
   .border {
@@ -70,4 +71,3 @@ html {
     background-color: transparent;
   }
 }
-
