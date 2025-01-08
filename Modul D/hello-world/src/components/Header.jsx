@@ -1,10 +1,15 @@
-import styles from './Header.module.css'
+import styles from "./Header.module.css";
 
-const Header = () => {
-  return(
-    // HTML KODE MODUS
-    <h1 class={styles.header}>Hello World!</h1>
-  );
+function greet() {
+  return "Hello World! From a private function!";
 }
 
-export default Header;
+export default function Header() {
+  return <h1 className={styles.header}>{greet()}</h1>;
+}
+
+export function Greeting() {
+  return <h1>{greet()}</h1>;
+}
+
+// export default Header;
