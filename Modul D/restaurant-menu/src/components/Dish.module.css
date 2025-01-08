@@ -1,0 +1,33 @@
+.dishCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.dishCard:hover {
+  transform: scale(1.05);
+}
+
+.dishTitle {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.dishPrice {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.dishIngredients {
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.dishCategory {
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}

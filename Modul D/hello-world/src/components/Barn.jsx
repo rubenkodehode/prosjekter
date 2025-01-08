@@ -1,5 +1,5 @@
 import BarneBarn from "./BarneBarn";
-import "./Barn.css";
+// import "./Barn.css";
 
 const Barn = (props) => {
   return (
