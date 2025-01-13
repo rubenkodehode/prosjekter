@@ -1,17 +1,12 @@
 import React from "react";
-import Dish from "./dish";
+import Dish from "./Dish";
 import styles from "./Menu.module.css";
 
 function Menu({ dishes }) {
   return (
-    <div>
+    <div className={styles.menuGrid}>
       {dishes.map((dish) => (
-        <div key={dish.id}>
-          <h2>{dish.tittel}</h2>
-          <p>{dish.pris}</p>
-          <p>{dish.ingredienser}</p>
-          <span>{dish.kategori}</span>
-        </div>
+        <Dish key={dish.id} dish={dish} />
       ))}
     </div>
   );
