@@ -1,10 +1,75 @@
+body {
+  background-color: rgb(156, 106, 106);
+  margin: 0;
+}
+
 .appContainer {
+  background: linear-gradient(135deg, #a80546, #1a5b2f, #880388);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.filterContainer {
   margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filterContainer button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterContainer button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #333333;
+}
+
+.activeButton {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  font-weight: bold;
+}
+
+.searchInput {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
