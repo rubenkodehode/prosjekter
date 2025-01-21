@@ -8,56 +8,73 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [results, setResults] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
-  const [languageFilter, setLanguageFilter] = useState("");
-  const [authorFilter, setAuthorFilter] = useState("");
-  const [subjectFilter, setSubjectFilter] = useState("");
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [authorFilter, setAuthorFilter] = useState("");
+  const [languageFilter, setLanguageFilter] = useState("");
+  const [subjectFilter, setSubjectFilter] = useState("");
 
   useEffect(() => {
-    if (searchText.length < 3) {
+    if (!searchText && !subjectFilter) {
       setResults([]);
+      setLoading(false);
       return;
     }
 
     const fetchBooks = async () => {
+      setLoading(true);
+      setError(null);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
       try {
-        let url = `https://gutendex.com/books?search=${searchText}`;
-        if (languageFilter) url += `&languages=${languageFilter}`;
-        const response = await fetch(url);
+        let query = searchText || subjectFilter;
+        let url = `https://gutendex.com/books?search=${query}`;
+
+        if (languageFilter) {
+          url += `&languages=${languageFilter}`;
+        }
+
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+
         if (!response.ok) throw new Error("Failed to fetch books");
+
         const data = await response.json();
 
-        const filteredResults = data.results.filter((book) =>
-          authorFilter
-            ? book.authors.some((author) =>
-                author.name.toLowerCase().includes(authorFilter.toLowerCase())
-              )
-            : true
-        );
+        let filteredResults = data.results;
 
-        const filteredSubjects = results.filter((book) =>
-          subjectFilter
-            ? book.subjects.some((subject) =>
-                subject.toLowerCase().includes(subjectFilter.toLowerCase())
-              )
-            : true
-        );
+        if (authorFilter) {
+          filteredResults = filteredResults.filter((book) =>
+            book.authors.some((author) =>
+              author.name.toLowerCase().includes(authorFilter.toLowerCase())
+            )
+          );
+        }
+
         setResults(filteredResults);
-        setError(null);
       } catch (err) {
-        setError(err.message);
+        if (err.name === "AbortError") {
+          setError("Request timed out. Please try again later.");
+        } else {
+          setError(err.message);
+        }
         setResults([]);
+      } finally {
+        setLoading(false);
       }
     };
 
-    const debounceTimeout = setTimeout(fetchBooks, 500); // Debouncing
-    return () => clearTimeout(debounceTimeout); // Cleanup timeout
-  }, [searchText, languageFilter, authorFilter]);
+    const debounceTimeout = setTimeout(fetchBooks, 500);
+    return () => clearTimeout(debounceTimeout);
+  }, [searchText, authorFilter, languageFilter, subjectFilter]);
 
-  const handleSelectBook = (book) => setSelectedBook(book);
+  const handleSubjectClick = (subject) => {
+    setSubjectFilter(subject);
+    setSearchText(subject);
+  };
 
   return (
-    <div className="App">
+    <div className={`App ${loading ? "loading" : ""}`}>
       <h1>Autocomplete Book Search</h1>
       <Autocomplete searchText={searchText} setSearchText={setSearchText} />
       <div className="filters">
@@ -67,15 +84,12 @@ const App = () => {
           value={authorFilter}
           onChange={(e) => setAuthorFilter(e.target.value)}
         />
-        <div className="filters">
-          <input
-            type="text"
-            placeholder="Filter by subject"
-            value={subjectFilter}
-            onChange={(e) => setSubjectFilter(e.target.value)}
-          />
-        </div>
-
+        <input
+          type="text"
+          placeholder="Filter by subject"
+          value={subjectFilter}
+          onChange={(e) => setSubjectFilter(e.target.value)}
+        />
         <select
           value={languageFilter}
           onChange={(e) => setLanguageFilter(e.target.value)}>
@@ -83,11 +97,19 @@ const App = () => {
           <option value="en">English</option>
           <option value="fr">French</option>
           <option value="de">German</option>
+          <option value="es">Spanish</option>
         </select>
       </div>
+      {loading && <div className="spinner"></div>}
       {error && <p className="error">{error}</p>}
-      {selectedBook && <BookDetails book={selectedBook} />}
-      <SearchResults results={results} onSelectBook={handleSelectBook} />
+      {selectedBook && (
+        <BookDetails book={selectedBook} onSubjectClick={handleSubjectClick} />
+      )}
+      <SearchResults
+        results={results}
+        onSelectBook={setSelectedBook}
+        displayAsCards={true}
+      />
     </div>
   );
 };

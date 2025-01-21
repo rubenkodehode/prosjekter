@@ -1,30 +1,30 @@
 import React from "react";
 
-const BookDetails = ({ book }) => {
-  // Hent bilde-URL
-  const imageUrl = book.formats["image/jpeg"];
-
+const BookDetails = ({ book, onSubjectClick }) => {
   return (
     <div className="book-details">
-      {imageUrl && (
-        <img src={imageUrl} alt={book.title} className="book-cover-large" />
-      )}
       <h2>{book.title}</h2>
+      {book.formats["image/jpeg"] && (
+        <img
+          src={book.formats["image/jpeg"]}
+          alt={book.title}
+          className="book-cover"
+        />
+      )}
       <p>
         <strong>Authors:</strong>{" "}
         {book.authors.map((author) => author.name).join(", ")}
       </p>
       <p>
-        <strong>Subjects:</strong>
-        {book.subjects.length > 0 ? (
-          book.subjects.map((subject, index) => (
-            <span className="subjects" key={index}>
-              {subject}
-            </span>
-          ))
-        ) : (
-          <span>No subjects available</span>
-        )}
+        <strong>Subjects:</strong>{" "}
+        {book.subjects.map((subject, index) => (
+          <span
+            key={index}
+            className="subject-tag"
+            onClick={() => onSubjectClick(subject)}>
+            {subject}
+          </span>
+        ))}
       </p>
       <p>
         <strong>Language:</strong> {book.languages.join(", ")}

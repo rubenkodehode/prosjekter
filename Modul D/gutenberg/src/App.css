@@ -1,209 +1,187 @@
-/* Sørg for at body og html alltid dekker hele skjermen */
-html,
+/* General styles */
 body {
+  font-family: Arial, sans-serif;
+  background: url("./assets/bookshelf.jpg");
+  background-position: center;
   margin: 0;
   padding: 0;
-  width: 100%;
-  background: #374151; /* Gradient for bakgrunn */
   display: flex;
-  flex-direction: column;
-}
-
-/* App-container fyller hele bredden og høyden */
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Start innhold fra toppen */
+  justify-content: center;
   align-items: center;
-  width: 100%; /* Dekker hele bredden */
-  height: 100%; /* Dekker hele høyden */
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #ffffff;
+  min-height: 100vh;
+  color: #ffffff;
 }
 
-/* Tittel */
-h1 {
-  text-align: center;
-  font-size: 32px;
-  color: #1f2937;
-  margin: 0;
-  padding: 20px 0;
+/* App container */
+.App {
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 2px solid #d1d5db;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  padding: 20px;
+  background-color: rgba(39, 39, 39, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  text-align: center;
 }
 
-/* Input og filtere */
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Search input and filters */
 input[type="text"],
 select {
-  color: #1f2937;
-  width: 90%; /* Bruker mesteparten av bredden */
-  max-width: 800px; /* Begrens maksimal bredde */
-  margin: 10px 0;
+  width: 100%;
+  max-width: 400px;
   padding: 12px;
   font-size: 16px;
-  border: 2px solid #d1d5db;
-  border-radius: 8px;
-  background-color: #f9fafb;
-  transition: all 0.3s ease;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 10px;
+  background: #000;
+  color: #fff;
 }
 
 input[type="text"]:focus,
 select:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  border-color: #00aaff;
   outline: none;
 }
 
-/* Filterseksjon */
+/* Filter container */
 .filters {
   display: flex;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 20px;
 }
 
-/* Søkeresultater */
-/* Container for søkeresultater */
+/* Search results container */
 .search-results {
-  display: grid; /* Bruk grid for cards */
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  ); /* Dynamisk antall kolonner */
-  gap: 20px; /* Avstand mellom cards */
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
 }
 
-/* Hvert kort */
-.book-card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Individual book card */
+.card {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px solid #555;
+  padding: 20px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  max-width: 220px;
+  min-width: 220px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
-  text-align: center;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
-.book-card:hover {
-  transform: translateY(-5px); /* Løft kortet ved hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Økt skygge */
+.card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(68, 68, 68, 0.6);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Bokomslag */
-.book-card .book-cover {
-  width: 100px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Informasjon om boken */
-.book-card .book-info h3 {
-  font-size: 16px;
-  color: #1f2937;
-  margin: 10px 0 5px;
-}
-
-.book-card .book-info p {
-  font-size: 14px;
-  color: #4b5563;
-  margin: 0;
-}
-
-/* Bokdetaljer */
-.book-details {
-  width: 90%; /* Bruker mesteparten av bredden */
-  max-width: 1200px; /* Maks bredde */
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  background-color: #f9fafb;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  max-height: 400px; /* Begrens høyde for bedre layout */
-}
-
-/* Bokomslag */
-.book-details .book-cover-large {
-  width: 120px;
-  height: auto; /* Bevar proporsjonene */
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Subjects som tagger */
-.book-details .subjects {
-  font-size: 14px;
-  color: #6b7280;
-  background-color: #e0f2fe;
-  padding: 5px 10px;
+/* Book cover styling */
+.card .book-cover {
+  width: 150px;
+  height: auto;
   border-radius: 5px;
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  white-space: nowrap; /* Unngå linjeskift */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Styling for tekst */
-.book-details h2 {
-  margin-top: 0;
-  font-size: 22px;
-  color: #1f2937;
+.card .book-cover:hover {
+  transform: scale(1.05);
 }
 
-.book-details p {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #374151;
-}
-
-.book-details strong {
+/* Book title */
+.card h3 {
+  font-size: 1rem;
   font-weight: bold;
-  color: #111827;
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  text-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: break-spaces;
 }
 
-/* Feilmeldinger */
-.error {
-  color: #d9534f;
-  background-color: #fde2e2;
-  padding: 10px;
-  border: 1px solid #f5c2c7;
-  border-radius: 4px;
-  margin-bottom: 15px;
+/* Author text */
+.card p {
+  font-size: 0.9rem;
+  color: #bbb;
   text-align: center;
 }
 
-/* Responsiv layout */
-@media (max-width: 600px) {
-  .App {
-    padding: 15px;
-  }
+/* Book cover styling */
+.book-cover {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
 
-  .filters {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.book-cover:hover {
+  transform: scale(1.05);
+}
 
-  .search-results {
-    max-height: 200px;
-  }
+/* Subjects styling */
+.subject-tag {
+  display: inline-block;
+  background-color: #444;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ddd;
+  transition: background-color 0.3s ease;
+}
 
-  .book-details {
-    max-height: 200px;
+.subject-tag:hover {
+  background-color: #00aaff;
+  color: white;
+}
+
+/* Spinner for loading */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid #00aaff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message */
+.error {
+  color: #ff4d4d;
+  background-color: #330000;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80%;
+  margin: 10px auto;
 }
