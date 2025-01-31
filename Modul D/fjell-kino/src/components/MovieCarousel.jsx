@@ -1,7 +1,9 @@
 import Slider from "react-slick";
 import { mockData } from "../data/movies";
+import MovieCard from "./MovieCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styles from "../styles/MovieCarousel.module.css";
 
 function MovieCarousel() {
   const settings = {
@@ -13,11 +15,13 @@ function MovieCarousel() {
   };
 
   return (
-    <Slider {...settings}>
-      {mockData.map((movie, index) => (
-        <MovieCard key={index} movie={movie} />
-      ))}
-    </Slider>
+    <div className={styles.carousel}>
+      <Slider {...settings}>
+        {mockData.map((movie, index) => (
+          <MovieCard key={index} movie={movie} isCarousel={true} />
+        ))}
+      </Slider>
+    </div>
   );
 }
 

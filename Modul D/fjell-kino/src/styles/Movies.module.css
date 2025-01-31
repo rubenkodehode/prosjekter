@@ -1,0 +1,54 @@
+.moviesContainer {
+  text-align: center;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+[data-theme="light"] .moviesContainer {
+  background-color: var(--background-light);
+  color: black;
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.movieDetails {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 500px;
+  text-align: center;
+  z-index: 10;
+}
+
+.movieDetails button {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.movieDetails button:hover {
+  background-color: var(--hover-color);
+}

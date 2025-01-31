@@ -1,0 +1,17 @@
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  max-width: 100vw;
+  width: 100%;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+/* Light Mode */
+[data-theme="light"] .footer {
+  background-color: var(--background-light);
+  color: black;
+}

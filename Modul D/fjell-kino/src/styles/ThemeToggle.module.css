@@ -1,0 +1,17 @@
+.themeToggle {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px; /* Gjør knappen rund */
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.themeToggle:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.1);
+}
