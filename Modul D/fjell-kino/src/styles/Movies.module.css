@@ -21,34 +21,67 @@
   justify-content: center;
 }
 
+/* Movie Details Modal */
 .movieDetails {
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  max-width: 500px;
+  width: 400px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  z-index: 10;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.movieDetails h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff5733;
+}
+
+.movieDetails p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #ddd;
 }
 
 .movieDetails button {
-  margin: 10px;
   padding: 10px;
+  margin: 10px;
   border: none;
-  background-color: var(--primary-color);
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  border-radius: 5px;
+  transition: 0.3s ease;
 }
 
-.movieDetails button:hover {
-  background-color: var(--hover-color);
+.movieDetails button:first-of-type {
+  background-color: #ff5733;
+  color: white;
+}
+
+.movieDetails button:first-of-type:hover {
+  background-color: #e14e2a;
+}
+
+.movieDetails button:last-of-type {
+  background-color: #444;
+  color: white;
+}
+
+.movieDetails button:last-of-type:hover {
+  background-color: #666;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+[data-theme="light"] .movieDetails {
+  background-color: var(--background-light);
 }

@@ -1,8 +1,12 @@
 .footer {
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 20px;
   background-color: var(--secondary-color);
   color: var(--text-color);
+  margin-top: auto;
   font-size: 1rem;
   max-width: 100vw;
   width: 100%;
@@ -12,6 +16,6 @@
 
 /* Light Mode */
 [data-theme="light"] .footer {
-  background-color: var(--background-light);
+  background-color: var(--header-footer-light);
   color: black;
 }

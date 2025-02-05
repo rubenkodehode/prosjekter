@@ -4,9 +4,16 @@
 }
 
 .slick-slide {
-  transition: transform 0.3s;
+  display: flex;
+  justify-content: center;
 }
 
-.slick-slide:hover {
-  transform: scale(1.05);
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-prev,
+.slick-next {
+  color: white;
+  z-index: 10;
 }
