@@ -18,24 +18,30 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
   background-color: var(--background-dark);
   color: var(--text-color);
 }
 
 #root {
+  background: red;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .mainContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-grow: 1;
+  min-height: 5000px;
+}
+
+.footer {
+  width: 100%;
   padding: 20px;
+  text-align: center;
+  background-color: #222;
+  position: relative;
+  color: white;
+  margin-top: auto; /* Plasserer footeren nederst */
 }
 
 a {

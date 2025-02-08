@@ -29,30 +29,32 @@ export const Booking = () => {
   };
 
   return (
-    <div className={styles.bookingContainer}>
-      <h1 className={styles.title}>Bestill Billetter</h1>
-      <p className={styles.movieTitle}>Film: {selectedMovie.title}</p>
-      <p className={styles.movieTime}>
-        Tidspunkt: {selectedMovie.times.join(", ")}
-      </p>
+    <div className={styles.container}>
+      <div className={styles.bookingContainer}>
+        <h1 className={styles.title}>Bestill Billetter</h1>
+        <p className={styles.movieTitle}>Film: {selectedMovie.title}</p>
+        <p className={styles.movieTime}>
+          Tidspunkt: {selectedMovie.times.join(", ")}
+        </p>
 
-      <div className={styles.formGroup}>
-        <label htmlFor="tickets">Antall billetter:</label>
-        <input
-          type="number"
-          id="tickets"
-          min="1"
-          max="10"
-          value={ticketCount}
-          onChange={handleTicketChange}
-        />
+        <div className={styles.formGroup}>
+          <label htmlFor="tickets">Antall billetter:</label>
+          <input
+            type="number"
+            id="tickets"
+            min="1"
+            max="10"
+            value={ticketCount}
+            onChange={handleTicketChange}
+          />
+        </div>
+
+        <p className={styles.totalPrice}>Totalpris: ${totalPrice.toFixed(2)}</p>
+
+        <button className={styles.confirmButton} onClick={handleConfirmBooking}>
+          Bekreft Bestilling
+        </button>
       </div>
-
-      <p className={styles.totalPrice}>Totalpris: ${totalPrice.toFixed(2)}</p>
-
-      <button className={styles.confirmButton} onClick={handleConfirmBooking}>
-        Bekreft Bestilling
-      </button>
     </div>
   );
 };
