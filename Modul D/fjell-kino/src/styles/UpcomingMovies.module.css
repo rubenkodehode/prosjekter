@@ -1,18 +1,19 @@
-.container {
-  text-align: center;
+.upcomingMoviesContainer {
+  display: flex;
   min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-dark);
   padding: 20px;
 }
 
-.moviesGrid {
+.movieGrid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  ); /* Minst 200px brede */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-content: center;
-  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .movieCard {
@@ -32,9 +33,20 @@
 
 .poster {
   width: 100%;
-  height: 300px; /* 📌 Endre størrelsen på posteren */
+  height: auto;
+  max-height: 300px; /* 📌 Endre størrelsen på posteren */
   object-fit: cover; /* 📌 Sørger for at bildet beskjæres riktig */
   border-radius: 5px;
+}
+
+.movieDetails {
+  background: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  margin-top: 20px;
 }
 
 h3 {
@@ -46,4 +58,8 @@ h3 {
 p {
   font-size: 0.9rem;
   color: #ccc;
+}
+
+[data-theme = "light"] .upcomingMoviesContainer{
+  background-color: var(--background-light);
 }

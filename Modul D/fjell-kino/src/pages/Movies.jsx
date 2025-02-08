@@ -41,7 +41,7 @@ export const Movies = () => {
           <p>Vurdering: {selectedMovie.rating}</p>
           <p>Sal: {selectedMovie.hall}</p>
           <p>Tidspunkt: {selectedMovie.times.join(" | ")}</p>
-          <button onClick={() => handleBooking(selectedMovie)}>
+          <button onClick={() => window.location.href = `/booking?movieTitle=${encodeURIComponent(selectedMovie.title)}`}>
             Bestill Billetter
           </button>
           <button onClick={() => setSelectedMovie(null)}>Lukk</button>
