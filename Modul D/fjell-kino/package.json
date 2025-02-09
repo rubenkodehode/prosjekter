@@ -3,11 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubenkodehode/fjell-kino.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.0.6",
