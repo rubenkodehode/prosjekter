@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: var(--background-dark);
+  background-color: var(--secondary-color);
 }
 
 .bookingBox {
@@ -70,4 +70,10 @@
 
 [data-theme = "light"] .formGroup{
   color: black;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    display: block !important;
+  }
 }

@@ -7,6 +7,13 @@ export const Booking = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const movieTitle = params.get("movieTitle");
+  
+  useEffect(() => {
+    setTimeout(() => {
+      window.dispatchEvent(new Event("resize"));
+    }, 200);
+  }, []);
+  
 
   console.log("Hentet movieTitle:", movieTitle);
 

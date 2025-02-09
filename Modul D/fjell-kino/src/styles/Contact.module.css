@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh; /* Full høyde på viewport */
   padding: 20px;
-  background-color: var(--background-dark);
+  background-color: var(--secondary-color);
 }
 
 .contactWrapper {

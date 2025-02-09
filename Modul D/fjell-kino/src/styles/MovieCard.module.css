@@ -81,3 +81,21 @@
   background-color: var(--background-light);
   color: black;
 }
+
+@media (max-width: 768px) {
+  .movieCard {
+    width: 80%; /* Fyller ut bredden på mindre skjermer */
+  }
+
+  .movieInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .showtimes button {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}
